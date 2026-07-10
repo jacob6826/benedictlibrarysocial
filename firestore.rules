@@ -2,6 +2,19 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     
+    // Helper function to generate friendship ID
+    function getFriendshipId(uid1, uid2) {
+      return uid1 < uid2 ? uid1 + '_' + uid2 : uid2 + '_' + uid1;
+    }
+
+    // Helper to check if viewers are accepted friends and have category permission enabled
+    function hasFriendPermission(viewerId, ownerId, category) {
+      let friendshipId = getFriendshipId(viewerId, ownerId);
+      return exists(/databases/$(database)/documents/friendships/$(friendshipId)) &&
+             get(/databases/$(database)/documents/friendships/$(friendshipId)).data.status == 'accepted' &&
+             get(/databases/$(database)/documents/friendships/$(friendshipId)).data.permissions[ownerId][category] == true;
+    }
+
     // Directory mapping of user emails (discovery)
     match /users/{userId} {
       allow read: if request.auth != null;
@@ -12,11 +25,7 @@ service cloud.firestore {
     match /users/{userId}/settings/{settingId} {
       allow write: if request.auth != null && request.auth.uid == userId;
       allow read: if request.auth != null && (
-        request.auth.uid == userId || (
-          exists(/databases/$(database)/documents/friendships/$(request.auth.uid < userId ? request.auth.uid + '_' + userId : userId + '_' + request.auth.uid)) &&
-          get(/databases/$(database)/documents/friendships/$(request.auth.uid < userId ? request.auth.uid + '_' + userId : userId + '_' + request.auth.uid)).data.status == 'accepted' &&
-          get(/databases/$(database)/documents/friendships/$(request.auth.uid < userId ? request.auth.uid + '_' + userId : userId + '_' + request.auth.uid)).data.permissions[userId].challenge == true
-        )
+        request.auth.uid == userId || hasFriendPermission(request.auth.uid, userId, 'challenge')
       );
     }
 
@@ -40,16 +49,11 @@ service cloud.firestore {
 
       // Friends can read only if accepted and permission checkbox is set
       allow read: if request.auth != null && (
-        let friendshipId = request.auth.uid < resource.data.userId ? request.auth.uid + '_' + resource.data.userId : resource.data.userId + '_' + request.auth.uid;
-        exists(/databases/$(database)/documents/friendships/$(friendshipId)) &&
-        get(/databases/$(database)/documents/friendships/$(friendshipId)).data.status == 'accepted' && (
-          // Wishlist Ledger check
-          (resource.data.status == 'Wishlist' && get(/databases/$(database)/documents/friendships/$(friendshipId)).data.permissions[resource.data.userId].wishlist == true) ||
-          // Physical Stacks check (excludes Wishlist)
-          (resource.data.status != 'Wishlist' && resource.data.type == 'Physical' && get(/databases/$(database)/documents/friendships/$(friendshipId)).data.permissions[resource.data.userId].stacks == true) ||
-          // Ebook/Audiobook Archives check (excludes Wishlist)
-          (resource.data.status != 'Wishlist' && resource.data.type != 'Physical' && get(/databases/$(database)/documents/friendships/$(friendshipId)).data.permissions[resource.data.userId].archives == true)
-        )
+        (resource.data.status == 'Wishlist' && hasFriendPermission(request.auth.uid, resource.data.userId, 'wishlist')) ||
+        (resource.data.status != 'Wishlist' && resource.data.type == 'Physical' && hasFriendPermission(request.auth.uid, resource.data.userId, 'stacks')) ||
+        (resource.data.status != 'Wishlist' && resource.data.type != 'Physical' && hasFriendPermission(request.auth.uid, resource.data.userId, 'archives')) ||
+        (resource.data.status != 'Wishlist' && hasFriendPermission(request.auth.uid, resource.data.userId, 'desk')) ||
+        (resource.data.status != 'Wishlist' && hasFriendPermission(request.auth.uid, resource.data.userId, 'annals'))
       );
     }
   }
