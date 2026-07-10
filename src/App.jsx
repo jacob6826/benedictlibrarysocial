@@ -143,6 +143,9 @@ export function Header() {
             <Link to="/challenge" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '18px', color: 'var(--ink)', padding: '4px 0', borderBottom: '1px solid rgba(0,0,0,0.02)', fontFamily: 'Cormorant Garamond, serif' }}>
               Reading Challenge
             </Link>
+            <Link to="/departures" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '18px', color: 'var(--ink)', padding: '4px 0', borderBottom: '1px solid rgba(0,0,0,0.02)', fontFamily: 'Cormorant Garamond, serif' }}>
+              Past Departures
+            </Link>
             <Link to="/friends" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', fontSize: '18px', color: 'var(--ink)', padding: '4px 0', borderBottom: '1px solid rgba(0,0,0,0.02)', fontFamily: 'Cormorant Garamond, serif' }}>
               <span>Friends</span>
               {pendingCount > 0 && (
@@ -159,9 +162,6 @@ export function Header() {
                   {pendingCount}
                 </span>
               )}
-            </Link>
-            <Link to="/departures" onClick={() => setMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '18px', color: 'var(--ink)', padding: '4px 0', borderBottom: '1px solid rgba(0,0,0,0.02)', fontFamily: 'Cormorant Garamond, serif' }}>
-              Past Departures
             </Link>
             
             <div style={{ marginTop: 'auto', borderTop: '1px solid var(--line)', paddingTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
