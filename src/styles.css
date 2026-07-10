@@ -1,0 +1,581 @@
+:root{--bg:#fbf9f4;--ink:#2b241e;--muted:#71645a;--blue:#2f3d5a;--line:#d9cdbd;--cream:#f7efe2}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fcfaf5 0%, #f9f5ed 100%);color:var(--ink);font-family:Inter,sans-serif}a{text-decoration:none;color:inherit}.page{width:min(1280px,100%);margin:0 auto;padding:18px 22px 28px}.titleRow{display:flex;align-items:center;justify-content:center;gap:18px;margin:10px 0 18px}.titleRow h1{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:.92;margin:0;color:#394a67;font-weight:700;letter-spacing:-.01em;white-space:nowrap}.ornament{width:28vw;max-width:420px;height:3px;background:linear-gradient(90deg,transparent,#b79f7b)}.ornament:last-child{background:linear-gradient(90deg,#b79f7b,transparent)}.panel{border:1px solid var(--line);background:linear-gradient(180deg,#fffdf8,#fbf3e7);box-shadow:inset 0 1px 0 rgba(255,255,255,.82),0 10px 24px rgba(44,36,29,.06);border-radius:14px;padding:16px;margin-bottom:12px}.hero{display:grid;grid-template-columns:auto auto auto;justify-content:center;gap:14px;align-items:center}.heroText{text-align:left}.kicker,.panel h3,.plaque h3,.bookCard h4,.timeline .year,.pageTitle,.ledgerPanel h3,.detailMeta h4,.departureCard h4{font-family:'Cormorant Garamond',serif}.kicker{font-size:20px;color:#4e4339;margin:0 0 2px}.hero h2{font-family:'Cormorant Garamond',serif;font-size:32px;line-height:1;margin:0 0 2px;font-weight:700}.hero p,.plaque p,.bookCard p,.caption,.entry,.pageSubtitle,.author,.detailMeta .author{margin:0;color:var(--muted);font-size:11px;line-height:1.35}.primaryBtn,.backLink{background:var(--blue);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-weight:700;display:inline-block}.bookCover{width:68px;height:90px;border-radius:4px;background:linear-gradient(160deg,#2f3d5a,#1b2538);border:1px solid #22304a;box-shadow:0 8px 16px rgba(0,0,0,.14);display:flex;align-items:end;justify-content:center;color:#efe3cf;font-family:'Cormorant Garamond',serif;padding:6px;text-align:center;font-size:11px;line-height:1}.bookCover.small{width:62px;height:88px;font-size:10px}.bookCover.mutedCover{filter:grayscale(1) sepia(.2)}.middleGrid,.bottomGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.plaqueGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:12px}.plaque{padding:16px 14px;text-align:center;background:linear-gradient(180deg,#e9dcc8,#ded0bc);border-radius:13px;border:1px solid #c7b8a4;box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -6px 10px rgba(0,0,0,.07)}.plaque h3{font-size:26px;margin:0 0 4px}.count{font-size:16px;color:#352d26;margin:0 0 4px}.plaque p{font-size:12px}.panel h3{font-size:22px;margin:0 0 10px;line-height:1}.bookCard{display:grid;grid-template-columns:62px 1fr;gap:12px;background:#fff8ef;border:1px solid #d8ccb8;border-radius:10px;padding:10px;align-items:center;margin-bottom:10px}.bookCard:last-child{margin-bottom:0}.bookCard h4{font-size:18px;line-height:1.05;margin:0 0 4px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.tags span{font-size:10px;padding:4px 8px;border-radius:999px;background:#efe4d0;border:1px solid #d8c6ad;color:#6d5d48}.coverRow{display:flex;gap:10px;flex-wrap:nowrap;overflow:auto;padding-bottom:4px}.coverRow.wrap{flex-wrap:wrap;overflow:visible;align-content:flex-start}.mini{width:76px}.caption{margin-top:5px;text-align:center}.queueTitle{margin-top:12px}.timeline .entry{border-left:2px solid var(--line);padding-left:8px;margin-left:4px;margin-bottom:10px;font-size:11px;line-height:1.25}.year{font-size:15px;font-weight:700;color:var(--ink)}.footerLinks{display:flex;justify-content:center;gap:20px;color:#2c241d;margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:15px}.footerLinks a{white-space:nowrap}.linkCard{display:block}.pageView{max-width:980px;margin:0 auto;padding:12px 0}.pageTitle{font-size:44px;margin:12px 0 4px;color:#394a67}.pageSubtitle{font-size:14px;margin-bottom:18px}.pageStub{border:1px dashed var(--line);border-radius:14px;padding:20px;background:#fffaf3;color:var(--muted);min-height:180px}.backLink{display:inline-block;margin-bottom:8px}.detailList{display:grid;gap:12px}.detailCard,.departureCard{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center;border:1px solid var(--line);background:#fffaf3;border-radius:14px;padding:12px;box-shadow:0 8px 18px rgba(44,36,29,.05)}.detailCard.detailed{min-height:120px}.detailMeta h4{font-size:24px;margin:0 0 4px;color:var(--ink)}.detailMeta .author{font-size:12px;margin-bottom:6px}.ledgerGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.ledgerPanel{border:1px solid var(--line);background:#fffaf3;border-radius:14px;padding:14px;min-height:320px}.deskBlock{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:center}.deskBlock textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:12px;background:#fffefb;padding:10px;font:inherit;color:var(--ink);resize:vertical;margin-top:8px}.departuresGrid{display:grid;gap:12px}@media (max-width:1000px){.ledgerGrid{grid-template-columns:1fr}.plaqueGrid,.middleGrid,.bottomGrid{grid-template-columns:1fr}.hero{grid-template-columns:1fr;justify-items:center;text-align:center}.heroText{text-align:center}.titleRow h1{font-size:54px}.ornament{width:18vw}.bookCard,.detailCard,.departureCard,.deskBlock{grid-template-columns:56px 1fr}}
+.inventoryHero{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}.inventoryStat{border:1px solid var(--line);background:linear-gradient(180deg,#f7efe2,#f1e6d6);border-radius:14px;padding:14px 16px;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}.statLabel{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--muted)}.statValue{font-family:'Cormorant Garamond',serif;font-size:42px;line-height:1;color:var(--blue);font-weight:700}.stacksList .detailCard{min-height:132px}.stacksList .detailMeta h4{font-size:26px}.stacksList .detailMeta .author{font-size:13px}.stacksList .tags span{font-size:11px;padding:5px 9px}.stacksList .bookCover.small{width:72px;height:98px;font-size:11px}
+.archivesList .detailCard{min-height:120px}.archivesList .bookCover.small{filter:saturate(.95) contrast(.98)}.circulationList .detailCard{min-height:124px}.ledgerStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.ledgerStats div{border:1px solid var(--line);border-radius:12px;background:#fff8ef;padding:10px;text-align:center}.ledgerStats span{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--muted)}.ledgerStats strong{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--blue)}.timelineBlock{padding-top:2px}
+.searchBar{margin:0 0 14px}.searchBar input{width:100%;border:1px solid var(--line);background:#fffaf6;border-radius:999px;padding:12px 16px;font:inherit;color:var(--ink);box-shadow:inset 0 1px 2px rgba(0,0,0,.03)}.bookDetail{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:start;border:1px solid var(--line);background:#fffaf3;border-radius:16px;padding:18px}.bookDetailMeta .author{font-size:14px;margin-bottom:10px}.bookDetail .pageStub{margin-top:14px}.inventoryHero{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}.inventoryStat{border:1px solid var(--line);background:linear-gradient(180deg,#f7efe2,#f1e6d6);border-radius:14px;padding:14px 16px;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}.statLabel{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--muted)}.statValue{font-family:'Cormorant Garamond',serif;font-size:42px;line-height:1;color:var(--blue);font-weight:700}.stacksList .detailCard,.archivesList .detailCard,.circulationList .detailCard{min-height:132px}.stacksList .detailMeta h4,.archivesList .detailMeta h4,.circulationList .detailMeta h4{font-size:26px}.stacksList .detailMeta .author,.archivesList .detailMeta .author,.circulationList .detailMeta .author{font-size:13px}.stacksList .tags span,.archivesList .tags span,.circulationList .tags span{font-size:11px;padding:5px 9px}.stacksList .bookCover.small{width:72px;height:98px;font-size:11px}.archivesList .bookCover.small{width:72px;height:98px;font-size:11px}.circulationList .bookCover.small{width:72px;height:98px;font-size:11px}.ledgerStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.ledgerStats div{border:1px solid var(--line);border-radius:12px;background:#fff8ef;padding:10px;text-align:center}.ledgerStats span{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--muted)}.ledgerStats strong{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--blue)}.timelineBlock{padding-top:2px}.departuresGrid{display:grid;gap:12px}.departureCard{grid-template-columns:72px 1fr}.detailList{display:grid;gap:12px}.detailCard,.departureCard{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center;border:1px solid var(--line);background:#fffaf3;border-radius:14px;padding:12px;box-shadow:0 8px 18px rgba(44,36,29,.05)}.detailMeta h4{font-size:24px;margin:0 0 4px;color:var(--ink)}.detailMeta .author{font-size:12px;margin-bottom:6px}
+.ledgerGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.ledgerPanel{border:1px solid var(--line);background:#fffaf3;border-radius:14px;padding:14px;min-height:340px;box-shadow:0 8px 18px rgba(44,36,29,.05)}.panelTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.panelPill{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--muted);background:#efe4d0;border:1px solid #d8c6ad;border-radius:999px;padding:4px 10px}.largeQueue .mini{width:86px}.largeQueue .bookCover.small{width:86px;height:110px;font-size:12px}.deskPanel .deskBlock{align-items:start}.deskPanel .bookCover{width:92px;height:124px;font-size:13px}.deskPanel h4{font-size:28px;margin:0 0 4px}.deskPanel textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:14px;background:#fffefb;padding:12px;font:inherit;color:var(--ink);resize:vertical;margin-top:10px;box-shadow:inset 0 1px 2px rgba(0,0,0,.03)}.annalsPanel .entry{font-size:12px;padding-bottom:6px}.annalsPanel .year{font-size:18px}.annalsPanel .timelineBlock{padding-top:4px}
+.bookHero{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start;border:1px solid var(--line);background:#fffaf3;border-radius:16px;padding:18px;box-shadow:0 8px 18px rgba(44,36,29,.05)}.bookHeroText .bookHeroAuthor{font-size:14px;margin-bottom:8px}.bookMetaGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.bookMetaGrid div{border:1px solid var(--line);background:linear-gradient(180deg,#f7efe2,#f1e6d6);border-radius:12px;padding:10px 12px;text-align:center}.bookMetaGrid span{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--muted)}.bookMetaGrid strong{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--blue)}.bookDetailSections{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.bookDetailSection{border:1px solid var(--line);background:#fffaf3;border-radius:14px;padding:14px;min-height:140px}.bookDetailSection h3{font-family:'Cormorant Garamond',serif;font-size:24px;margin:0 0 8px}.bookDetailSection p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.queueThumb{background:none;border:none;padding:0;cursor:pointer}.queueThumb .bookCover{transition:transform .18s ease,box-shadow .18s ease}.queueThumb.active .bookCover,.queueThumb:hover .bookCover{transform:translateY(-2px);box-shadow:0 12px 20px rgba(44,36,29,.16)}.bookDetailSection,.ledgerPanel,.detailCard,.departureCard,.bookHero,.inventoryStat,.plaque,.panel{transition:box-shadow .18s ease,border-color .18s ease}.bookDetailSection:hover,.ledgerPanel:hover,.detailCard:hover,.departureCard:hover,.bookHero:hover,.inventoryStat:hover,.plaque:hover,.panel:hover{border-color:#c3b29a;box-shadow:0 12px 26px rgba(44,36,29,.08)}.deskPanel textarea{font-family:'Inter',sans-serif}.deskPanel textarea:focus,.searchBar input:focus{outline:none;border-color:#b79f7b;box-shadow:0 0 0 3px rgba(183,159,123,.15)}
+.bookHeroText .tags span{font-size:11px}.bookHeroAuthor{font-size:14px}.bookDetailSection{min-height:150px}.bookDetailSection p{white-space:pre-line}
+@media (max-width: 800px) {
+  .panelTop { flex-direction: column; align-items: flex-start !important; }
+  .panelTop > div { flex-wrap: wrap; }
+  .bookHero { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .bookHeroText > div { flex-direction: column; align-items: center; gap: 10px; }
+  .bookHeroText > div > div { justify-content: center; flex-wrap: wrap; }
+  .bookMetaGrid { grid-template-columns: 1fr; }
+  .bookDetailSections { grid-template-columns: 1fr; }
+  .inventoryHero { grid-template-columns: 1fr; }
+  .ledgerStats { grid-template-columns: 1fr; }
+  .pageTitle { font-size: 32px; line-height: 1.1; margin-bottom: 8px; }
+  .titleRow h1 { font-size: 42px; }
+  .pageView > div[style*="justify-content: space-between"] { flex-direction: column; align-items: flex-start !important; gap: 12px; }
+  .pageView > div[style*="justify-content: space-between"] > div { flex-wrap: wrap; }
+}
+
+/* Scriptorium Header and Theme Layout Enhancements */
+.menuToggleButton {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--muted);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  user-select: none;
+  outline: none;
+  z-index: 1001;
+  margin: 10px 0 2px 0;
+}
+.menuToggleButton:hover {
+  border-color: #b79f7b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.titleRow {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between !important;
+  width: 100%;
+  padding: 0 8px; /* Sits perfectly at the edge of the page container content */
+  margin: 14px 0 6px 0 !important;
+  gap: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.titleRow h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 84px !important; /* Larger desktop title */
+  line-height: 0.92;
+  margin: 0;
+  color: #394a67;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  transition: font-size 0.3s ease;
+}
+
+.headerCrest {
+  transition: transform 0.3s ease, filter 0.3s ease, width 0.3s ease, height 0.3s ease;
+  overflow: visible;
+  flex-shrink: 0;
+  display: inline-block;
+  align-self: center;
+  width: 120px; /* Substantially larger crests */
+  height: 52px;
+}
+
+/* Tablet: title and crest scaling */
+@media (max-width: 1000px) {
+  .titleRow {
+    padding: 0 4px;
+  }
+  .titleRow h1 {
+    font-size: 60px !important;
+  }
+  .headerCrest {
+    width: 90px;
+    height: 39px;
+  }
+}
+
+/* Mobile: push content down to avoid menu button overlay */
+@media (max-width: 600px) {
+  .titleRow {
+    padding: 0 16px;
+    margin-top: 40px !important;
+  }
+  .titleRow h1 {
+    font-size: 32px !important;
+  }
+  .headerCrest {
+    width: 40px;
+    height: 17px;
+  }
+}
+
+.studyKicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.38em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+/* Custom Progress Bar Classes */
+.progressBarBg {
+  background: #efe4d0;
+  border: 1px solid #dcd1be;
+}
+.progressBarFill {
+  background: linear-gradient(90deg, #dca842, #b79f7b);
+}
+
+/* Reflections Styling */
+.deskReflections {
+  border-top: 1px dashed #d8c6ad;
+}
+.reflectionTitle {
+  color: #b79f7b;
+}
+.reflectionText {
+  color: #5c4e43;
+}
+
+/* Premium Brand Charcoal & Navy Dark Mode */
+body.dark-mode {
+  --bg: #141619;
+  --ink: #e2e4e9;
+  --muted: #8a92a3;
+  --blue: #8ea6d2; /* High-readability brand navy in dark mode */
+  --line: #2d3139;
+  --cream: #1b1e22;
+  background: linear-gradient(180deg, #101214 0%, #141619 100%) !important;
+  color: var(--ink) !important;
+}
+body.dark-mode .panel, 
+body.dark-mode .detailCard, 
+body.dark-mode .departureCard, 
+body.dark-mode .bookHero,
+body.dark-mode .ledgerPanel,
+body.dark-mode .bookDetailSection {
+  background: linear-gradient(180deg, #1b1e23, #16191c) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 8px 20px rgba(0,0,0,0.4) !important;
+  border-color: var(--line) !important;
+}
+body.dark-mode .plaque,
+body.dark-mode .inventoryStat,
+body.dark-mode .bookMetaGrid div {
+  background: linear-gradient(180deg, #242a36, #1c212b) !important;
+  border-color: #3b4456 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -6px 10px rgba(0,0,0,0.3) !important;
+}
+body.dark-mode .count,
+body.dark-mode .plaque p {
+  color: #e2e4e9 !important;
+}
+body.dark-mode .plaque h3 {
+  color: #8ea6d2 !important;
+}
+body.dark-mode .bookCard {
+  background: #181b1f !important;
+  border-color: var(--line) !important;
+}
+body.dark-mode .tags span {
+  background: #1a1e24 !important;
+  border-color: #2b3342 !important;
+  color: #8ea6d2 !important;
+}
+body.dark-mode .primaryBtn,
+body.dark-mode a.backLink {
+  background: var(--blue) !important;
+  color: #ffffff !important;
+}
+body.dark-mode .primaryBtn:hover,
+body.dark-mode a.backLink:hover {
+  background: #6a82b3 !important;
+  box-shadow: 0 0 12px rgba(91, 115, 166, 0.3) !important;
+}
+body.dark-mode .backLink {
+  color: #8ea6d2 !important;
+}
+body.dark-mode input, 
+body.dark-mode textarea, 
+body.dark-mode select {
+  background: #101214 !important;
+  border-color: #2d3139 !important;
+  color: #e2e4e9 !important;
+}
+body.dark-mode input:focus, 
+body.dark-mode textarea:focus, 
+body.dark-mode select:focus {
+  border-color: var(--blue) !important;
+  box-shadow: 0 0 0 3px rgba(91, 115, 166, 0.2) !important;
+}
+body.dark-mode .titleRow h1 {
+  color: #8ea6d2 !important;
+  background: linear-gradient(135deg, #b8ceff 0%, #5b73a2 50%, #b8ceff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0px 2px 10px rgba(91, 115, 166, 0.25) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: -8px !important;
+}
+
+body.dark-mode .studyKicker {
+  color: #8ea6d2 !important;
+}
+
+body.dark-mode .footerLinks {
+  color: var(--muted) !important;
+}
+
+body.dark-mode .footerLinks a {
+  color: var(--muted) !important;
+}
+
+body.dark-mode .footerLinks a:hover {
+  color: #8ea6d2 !important;
+}
+
+body.dark-mode .count {
+  color: #8ea6d2 !important;
+}
+
+body.dark-mode .kicker {
+  color: #8ea6d2 !important;
+}
+
+body.dark-mode .hero h2 {
+  color: var(--ink) !important;
+}
+
+body.dark-mode .year {
+  color: var(--ink) !important;
+}
+
+body.dark-mode .entry {
+  color: var(--muted) !important;
+}
+
+body.dark-mode .timeline .entry {
+  border-left-color: var(--line) !important;
+}
+
+body.dark-mode .progressBarBg {
+  background: #1b1e22 !important;
+  border-color: #2d3139 !important;
+}
+body.dark-mode .progressBarFill {
+  background: linear-gradient(90deg, #5b73a2, #8ea6d2) !important;
+}
+
+body.dark-mode .deskReflections {
+  border-top-color: #2d3139 !important;
+}
+body.dark-mode .reflectionTitle {
+  color: #8ea6d2 !important;
+}
+body.dark-mode .reflectionText {
+  color: #a69586 !important;
+}
+
+.bookProgressBlock {
+  background: #fffcf7;
+  border: 1px solid #dcd1be;
+}
+body.dark-mode .bookProgressBlock {
+  background: #1b1e22 !important;
+  border-color: #2d3139 !important;
+}
+
+/* Mobile Responsiveness & Optimization for Viewports 600px and below (e.g. iPhone 17 Pro) */
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 10px 12px 20px !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Prevent the horizontal book cover rows from blowing out the page width */
+  .coverRow {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    padding-bottom: 8px !important;
+    -webkit-overflow-scrolling: touch !important; /* smooth momentum scrolling on iOS */
+  }
+  
+  /* Make book covers in row slightly more compact on mobile */
+  .mini {
+    width: 64px !important;
+    flex-shrink: 0 !important;
+  }
+  .mini .bookCover {
+    width: 64px !important;
+    height: 84px !important;
+  }
+  
+  /* Make the title row fit beautifully on a single line with flanking crests */
+  .titleRow {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+    margin: 14px 0 6px !important; /* No extra margin-top needed since hamburger menu is below */
+    padding: 0 4px !important;
+    width: 100% !important;
+  }
+  
+  /* Scale down the title so it fits perfectly on a single line on an iPhone screen */
+  .titleRow h1 {
+    font-size: 32px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: none !important;
+    -webkit-text-fill-color: #394a67 !important;
+  }
+  
+  body.dark-mode .titleRow h1 {
+    -webkit-text-fill-color: transparent !important;
+    font-size: 32px !important;
+  }
+  
+  /* Hide the long horizontal lines so they don't force overflow */
+  .ornament {
+    display: none !important;
+  }
+  
+  /* Shrink and align the flanking crests on either side of the title */
+  .headerCrest {
+    width: 64px !important; /* Substantially larger mobile crests */
+    height: 28px !important;
+    display: inline-block !important;
+    transform: translateY(0px) !important;
+  }
+  
+  .studyKicker {
+    margin-top: 1px !important;
+    font-size: 8px !important;
+    letter-spacing: 0.22em !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  /* Tidy up theme toggle button position in the top corner */
+  button[title="Toggle Theme"] {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 14px !important;
+  }
+  
+  /* Fit panels perfectly to the page width without clipping */
+  .panel, .plaqueGrid, .middleGrid, .bottomGrid {
+    max-width: 100% !important;
+  }
+  
+  /* Tidy up search inputs and selectors */
+  .searchBar input {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+  
+  .searchBar select {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    width: 100% !important;
+  }
+  
+  /* Resize the Ex Libris cardboard card for mobile screens */
+  div[style*="radial-gradient"] {
+    padding: 20px 16px !important;
+    max-width: 320px !important;
+  }
+  
+  div[style*="radial-gradient"] h3 {
+    font-size: 24px !important;
+  }
+  
+  /* Adjust lists and detail card typography to look crisp and fitting */
+  .detailMeta h4 {
+    font-size: 20px !important;
+  }
+  
+  .detailCard, .departureCard {
+    padding: 10px !important;
+    gap: 10px !important;
+  }
+  
+  /* Wrap footer links beautifully so they are 100% accessible on mobile */
+  .footerLinks {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px 16px !important;
+    margin-top: 24px !important;
+    padding: 12px 6px !important;
+    text-align: center !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* On the Desk Column Styling */
+.deskContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  align-items: center;
+}
+.deskLeftCol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  justify-self: end;
+  width: fit-content;
+}
+.deskLeftColText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.deskRightCol {
+  justify-self: start;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media (max-width: 800px) {
+  .deskContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .deskLeftCol {
+    flex-direction: column !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+  .deskLeftColText {
+    white-space: normal !important;
+  }
+  .deskRightCol {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .deskRightCol form {
+    justify-content: center !important;
+  }
+}
+/* Responsive Form Grids for Mobile Viewports */
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.form-grid-price-url {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+}
+@media (max-width: 600px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .form-grid-price-url {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+/* Slide-in Menu Keyframe Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom Header Back Link and Old Back Link Hiding */
+.headerBackLink {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--blue);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+.headerBackLink:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .headerBackLink {
+    left: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Hide all legacy page-specific inline button back links since they are now unified in the header controls row */
+button.backLink {
+  display: none !important;
+}
+
+/* Reading Challenge Page Responsive Grid */
+.challengeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+@media (max-width: 800px) {
+  .challengeGrid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
