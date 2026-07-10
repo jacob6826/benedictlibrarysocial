@@ -4,6 +4,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import { doc, getDoc, setDoc, addDoc, collection, deleteDoc } from 'firebase/firestore';
 import { db, auth } from './firebase';
 import { useLibrary, Header } from './App';
+import GoodreadsImporter from './GoodreadsImporter';
 
 function Shell({ children }) { 
   return (
@@ -407,7 +408,10 @@ export default function BookForm() {
     <Shell>
       <div className="pageView">
         <button type="button" className="backLink" onClick={() => navigate(-1)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', font: 'inherit', color: 'var(--blue)' }}>← Cancel</button>
-        <h2 className="pageTitle">{id ? 'Edit Book' : 'Catalog New Book'}</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', width: '100%' }}>
+          <h2 className="pageTitle" style={{ margin: 0 }}>{id ? 'Edit Book' : 'Catalog New Book'}</h2>
+          {!id && <GoodreadsImporter />}
+        </div>
         
         <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px', marginTop: '20px' }}>
           <div className="panel" style={{ display: 'grid', gap: '15px' }}>
