@@ -5,6 +5,7 @@ import { doc, getDoc, setDoc, addDoc, collection, deleteDoc } from 'firebase/fir
 import { db, auth } from './firebase';
 import { useLibrary, Header } from './App';
 import GoodreadsImporter from './GoodreadsImporter';
+import JSONImporter from './JSONImporter';
 
 function Shell({ children }) { 
   return (
@@ -410,7 +411,12 @@ export default function BookForm() {
         <button type="button" className="backLink" onClick={() => navigate(-1)} style={{ border: 'none', background: 'none', padding: 0, cursor: 'pointer', font: 'inherit', color: 'var(--blue)' }}>← Cancel</button>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', width: '100%' }}>
           <h2 className="pageTitle" style={{ margin: 0 }}>{id ? 'Edit Book' : 'Catalog New Book'}</h2>
-          {!id && <GoodreadsImporter />}
+          {!id && (
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <JSONImporter />
+              <GoodreadsImporter />
+            </div>
+          )}
         </div>
         
         <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px', marginTop: '20px' }}>
