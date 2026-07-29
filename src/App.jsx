@@ -2254,12 +2254,12 @@ export function FriendsPage() {
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 12px', fontSize: '12px', fontFamily: 'Inter, sans-serif' }}>
                             {[
                               { key: 'desk', label: 'On the Desk' },
+                              { key: 'challenge', label: 'Challenge' },
+                              { key: 'wishlist', label: 'Wishlist' },
                               { key: 'stacks', label: 'Stacks' },
                               { key: 'archives', label: 'Archives' },
-                              { key: 'challenge', label: 'Challenge' },
                               { key: 'annals', label: 'Annals' },
-                              { key: 'commonplace', label: 'Commonplace' },
-                              { key: 'wishlist', label: 'Wishlist' }
+                              { key: 'commonplace', label: 'Commonplace' }
                             ].map(perm => (
                               <label key={perm.key} style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', userSelect: 'none' }}>
                                 <input 
@@ -2339,12 +2339,12 @@ export function FriendProfilePage() {
         const perms = data?.permissions?.[friendId] || {};
         const availableTabs = [];
         if (perms.desk) availableTabs.push('desk');
+        if (perms.challenge) availableTabs.push('challenge');
+        if (perms.wishlist) availableTabs.push('wishlist');
         if (perms.stacks) availableTabs.push('stacks');
         if (perms.archives) availableTabs.push('archives');
-        if (perms.challenge) availableTabs.push('challenge');
         if (perms.annals) availableTabs.push('annals');
         if (perms.commonplace) availableTabs.push('commonplace');
-        if (perms.wishlist) availableTabs.push('wishlist');
 
         if (availableTabs.length > 0) {
           setActiveTab(prev => (prev && availableTabs.includes(prev) ? prev : availableTabs[0]));
@@ -2415,12 +2415,12 @@ export function FriendProfilePage() {
   // Determine shared sections and auto-select the first shared section as active tab
   const tabs = [];
   if (allowedPermissions.desk) tabs.push({ id: 'desk', label: 'On the Desk' });
+  if (allowedPermissions.challenge) tabs.push({ id: 'challenge', label: 'Challenge' });
+  if (allowedPermissions.wishlist) tabs.push({ id: 'wishlist', label: 'Wishlist' });
   if (allowedPermissions.stacks) tabs.push({ id: 'stacks', label: 'The Stacks' });
   if (allowedPermissions.archives) tabs.push({ id: 'archives', label: 'The Archives' });
-  if (allowedPermissions.challenge) tabs.push({ id: 'challenge', label: 'Challenge' });
   if (allowedPermissions.annals) tabs.push({ id: 'annals', label: 'Reading Annals' });
   if (allowedPermissions.commonplace) tabs.push({ id: 'commonplace', label: 'Commonplace' });
-  if (allowedPermissions.wishlist) tabs.push({ id: 'wishlist', label: 'Wishlist' });
 
   return (
     <Shell>
