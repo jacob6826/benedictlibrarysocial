@@ -2332,7 +2332,23 @@ export function FriendProfilePage() {
     // 1. Fetch friendship details
     const unsubFriendship = onSnapshot(doc(db, 'friendships', friendshipId), (snap) => {
       if (snap.exists()) {
-        setFriendship(snap.data());
+        const data = snap.data();
+        setFriendship(data);
+
+        // Auto select first shared tab safely
+        const perms = data?.permissions?.[friendId] || {};
+        const availableTabs = [];
+        if (perms.desk) availableTabs.push('desk');
+        if (perms.stacks) availableTabs.push('stacks');
+        if (perms.archives) availableTabs.push('archives');
+        if (perms.challenge) availableTabs.push('challenge');
+        if (perms.annals) availableTabs.push('annals');
+        if (perms.commonplace) availableTabs.push('commonplace');
+        if (perms.wishlist) availableTabs.push('wishlist');
+
+        if (availableTabs.length > 0) {
+          setActiveTab(prev => (prev && availableTabs.includes(prev) ? prev : availableTabs[0]));
+        }
       } else {
         setFriendship(null);
       }
@@ -2405,12 +2421,6 @@ export function FriendProfilePage() {
   if (allowedPermissions.annals) tabs.push({ id: 'annals', label: 'Reading Annals' });
   if (allowedPermissions.commonplace) tabs.push({ id: 'commonplace', label: 'Commonplace' });
   if (allowedPermissions.wishlist) tabs.push({ id: 'wishlist', label: 'Wishlist' });
-
-  const [initialSelected, setInitialSelected] = React.useState(false);
-  if (tabs.length > 0 && !activeTab && !initialSelected) {
-    setActiveTab(tabs[0].id);
-    setInitialSelected(true);
-  }
 
   return (
     <Shell>
