@@ -7,6 +7,13 @@ service cloud.firestore {
       return uid1 < uid2 ? uid1 + '_' + uid2 : uid2 + '_' + uid1;
     }
 
+    // Helper to check if viewers are accepted friends
+    function isAcceptedFriend(viewerId, ownerId) {
+      let friendshipId = getFriendshipId(viewerId, ownerId);
+      return exists(/databases/$(database)/documents/friendships/$(friendshipId)) &&
+             get(/databases/$(database)/documents/friendships/$(friendshipId)).data.status == 'accepted';
+    }
+
     // Helper to check if viewers are accepted friends and have category permission enabled
     function hasFriendPermission(viewerId, ownerId, category) {
       let friendshipId = getFriendshipId(viewerId, ownerId);
@@ -25,7 +32,7 @@ service cloud.firestore {
     match /users/{userId}/settings/{settingId} {
       allow write: if request.auth != null && request.auth.uid == userId;
       allow read: if request.auth != null && (
-        request.auth.uid == userId || hasFriendPermission(request.auth.uid, userId, 'challenge')
+        request.auth.uid == userId || isAcceptedFriend(request.auth.uid, userId)
       );
     }
 
@@ -55,14 +62,8 @@ service cloud.firestore {
       allow read, update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
       allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
 
-      // Friends can read only if accepted and permission checkbox is set
-      allow read: if request.auth != null && (
-        (resource.data.status == 'Wishlist' && hasFriendPermission(request.auth.uid, resource.data.userId, 'wishlist')) ||
-        (resource.data.status != 'Wishlist' && resource.data.type == 'Physical' && hasFriendPermission(request.auth.uid, resource.data.userId, 'stacks')) ||
-        (resource.data.status != 'Wishlist' && resource.data.type != 'Physical' && hasFriendPermission(request.auth.uid, resource.data.userId, 'archives')) ||
-        (resource.data.status != 'Wishlist' && hasFriendPermission(request.auth.uid, resource.data.userId, 'desk')) ||
-        (resource.data.status != 'Wishlist' && hasFriendPermission(request.auth.uid, resource.data.userId, 'annals'))
-      );
+      // Friends can read books if accepted
+      allow read: if request.auth != null && isAcceptedFriend(request.auth.uid, resource.data.userId);
     }
   }
 }
